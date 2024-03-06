@@ -1,5 +1,5 @@
 import Header from '@/components/Header/Header';
-import SettingInfo from '@/components/SignUp';
+import SettingInfo from '@/pages/SignUp';
 
 export default function Home() {
   return (
