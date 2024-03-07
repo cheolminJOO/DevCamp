@@ -98,7 +98,14 @@ const SettingInfo = () => {
                 readOnly
               />
               {isOpen && (
-                <Modal open={true} onOk={handleOnOff} onCancel={handleOnOff}>
+                <Modal
+                  okText='확인'
+                  cancelText ='취소'
+                  open={true}
+                  onOk={handleOnOff}
+                  onCancel={handleOnOff}
+                  okButtonProps={{ className: 'custom-ok-button-class' }}
+                >
                   <DaumPostcode onComplete={onChangeAddress}></DaumPostcode>
                 </Modal>
               )}

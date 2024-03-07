@@ -5,16 +5,6 @@ import { useForm } from 'react-hook-form';
 import { SignUpSchema } from '../Schema/SignUpSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Input } from '@/components/ui/input';
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form';
 
 interface Person {
   name: string;
