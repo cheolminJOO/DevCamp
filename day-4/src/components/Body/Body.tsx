@@ -1,14 +1,20 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { EmailInputWithLabel } from '../emailInput';
-import { PWInputWithLabel } from '../passwordInput';
+import { PWInputWithLabel } from '../Input/passwordInput';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { loginSchema } from '../Validator/Validation';
+import { Nickname } from '../Input/nameInput';
+import { NicknameCheck } from '../Input/nameCheckInput';
+import { EmailInputWithLabel } from '../Input/emailInput';
 
 interface IProps {
   email: string;
+  password: string;
+  name: string;
+  nameCheck: string;
 }
+
 
 const Body = () => {
   const {
@@ -29,15 +35,10 @@ const Body = () => {
           </div>
 
           <div className='flex justify-center items-center flex-col'>
-            <div className='my-5'>
-              <input {...register('email')} />
-              {errors.email?.message && (
-                <span className='text-red-500'>{errors.email?.message}</span>
-              )}
-            </div>
-            <div className='my-5'>
-              <PWInputWithLabel />
-            </div>
+            <EmailInputWithLabel register={register} errors={errors} />
+            <PWInputWithLabel register={register} errors={errors} />
+            <Nickname register={register} errors={errors}/>
+            <NicknameCheck register={register} errors={errors}/>
           </div>
           <div className='flex justify-center items-center'>
             <Button type='button' className='mr-2'>
