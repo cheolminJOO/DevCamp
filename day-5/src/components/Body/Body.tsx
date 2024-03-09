@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { PWInputWithLabel } from '../Input/passwordInput';
 import { useForm } from 'react-hook-form';
+// eslint-disable-next-line
 import { zodResolver } from '@hookform/resolvers/zod';
 import { loginSchema } from '../Validator/Validation';
 import { EmailInputWithLabel } from '../Input/emailInput';
