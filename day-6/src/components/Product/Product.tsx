@@ -50,13 +50,11 @@ const Product = () => {
         message: 'Username must be at least 2 characters.',
       }),
       count: z.string().min(1, { message: '수량을 선택하지 않았습니다' }),
-      address: z.string(),
+      address: z
+        .string()
+        .refine(() => iAddress !== '', { message: '주소를 설정하세요' }),
       color: z.string().min(1, { message: '색상을 선택하세요.' }),
     })
-    .refine((data) => data.address === '', {
-      message: '주소를 설정하세요',
-      path: ['address'],
-    });
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
