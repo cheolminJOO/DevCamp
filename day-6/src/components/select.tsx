@@ -8,10 +8,10 @@ import {
 
 import React from 'react';
 
-const SelectBar = () => {
+const SelectBar = ({ field }) => {
   return (
-    <Select>
-      <SelectTrigger className='w-[180px]'>
+    <Select onValueChange={field.onChange} defaultValue={field.value}>
+      <SelectTrigger className='w-[200px]'>
         <SelectValue placeholder='Color' />
       </SelectTrigger>
       <SelectContent>
